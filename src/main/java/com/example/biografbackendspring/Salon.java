@@ -4,7 +4,7 @@ public class Salon {
     private int id;
     private int theaterId;
     private String location;
-    private String theaterSeats;
+    private String theaterSeats; //TA BORT THEATERSEATS
 
     public Salon(int id, int theaterId, String location, String theaterSeats){
         this.id = id;

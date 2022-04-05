@@ -14,11 +14,11 @@ public class StaffDAO {
 
     private JdbcTemplate jdbcTemplate;
 
-    public void insertMovies(int id, String name, String phone, String userName, String passWord) {
+    public void insertStaff(int id, String name, String phone, String userName, String passWord, String add_staff, String delete_staff, String role, String hours, String sell_tickets, String tickets_sold, String movie_name, String dateTime) {
 
-        String query = "INSERT INTO Staff (Staff_id, Staff_name, Staff_phone, Staff_userName, Staff_passWord) VALUES(?,?,?,?,?)";
+        String query = "INSERT INTO Staff (Staff_id, Staff_name, Staff_phone, Staff_userName, Staff_passWord, Staff_add_staff, Staff_delete_staff, Staff_role, Staff_hours, Staff_sell_tickets, Staff_tickets_sold, Staff_movie_name, Staff_dateTime ) VALUES(?,?,?,?,?)";
 
-        int result = jdbcTemplate.update(query, id, name, phone, userName, passWord);
+        int result = jdbcTemplate.update(query, id, name, phone, userName, passWord, add_staff, delete_staff, role, hours, sell_tickets, tickets_sold, movie_name, dateTime);
 
         if (result > 0) {
             System.out.println(result + " Salon added to database, good job dumbass");
@@ -37,7 +37,14 @@ public class StaffDAO {
                 Staff staff1 = new Staff(rs.getInt("Staff_id"),
                         rs.getString("Staff_name"),
                         rs.getString("Staff_phone"),
-                        rs.getString("Staff_userName"),
+                        rs.getString("Staff_add_staff"),
+                        rs.getString("Staff_delete_staff"),
+                        rs.getString("Staff_role"),
+                        rs.getString("Staff_hours"),
+                        rs.getString("Staff_sell_tickets"),
+                        rs.getString("Staff_tickets_sold"),
+                        rs.getString("Staff_movie_name"),
+                        rs.getString("Staff_dateTime"),
                         rs.getString("Staff_passWord"));
 
                 return staff1;

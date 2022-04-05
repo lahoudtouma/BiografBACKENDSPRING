@@ -2,12 +2,12 @@ package com.example.biografbackendspring;
 
 public class Movies {
     private int id;
-    private int theaterId;
+    private int theaterId; //TA BORT SEATSAVAILABLE
     private String name;
     private String dateTime;
     private String seatsAvailable;
 
-    public Movies(int id, int theaterId, String name, String dateTime, String seatsAvailable) {
+    public Movies(int id, int theaterId, String name, String dateTime) {
         this.id = id;
         this.name = name;
         this.dateTime = dateTime;

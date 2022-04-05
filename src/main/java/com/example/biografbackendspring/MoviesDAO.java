@@ -17,11 +17,11 @@ import java.sql.SQLException;
 
         private JdbcTemplate jdbcTemplate;
 
-        public void insertMovies(int id, int theaterId, String name, String dateTime, String seatsAvailable) {
+        public void insertMovies(int id, int theaterId, String name, String dateTime) {
 
-            String query = "INSERT INTO movies (Movies_id, Movies_theaterId, Movies_name, Movies_dateTime, Movies_seatsAvailable) VALUES(?,?,?,?,?)";
+            String query = "INSERT INTO movies (Movies_id, Movies_theaterId, Movies_name, Movies_dateTime) VALUES(?,?,?,?)";
 
-            int result = jdbcTemplate.update(query, id, theaterId, name, dateTime, seatsAvailable);
+            int result = jdbcTemplate.update(query, id, theaterId, name, dateTime);
 
             if (result > 0) {
                 System.out.println(result + " Movie added to database, good job dumbass");
@@ -39,8 +39,8 @@ import java.sql.SQLException;
                         Movies mov = new Movies(rs.getInt("movie_id"),
                                 rs.getInt("movie_theatreId"),
                                 rs.getString("movie_name"),
-                                rs.getString("movie_dateTime"),
-                                rs.getString("movie_seatsAvailable"));
+                                rs.getString("movie_dateTime"));
+
 
                         return mov;
 
