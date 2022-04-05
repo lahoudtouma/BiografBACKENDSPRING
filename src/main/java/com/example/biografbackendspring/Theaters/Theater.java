@@ -1,16 +1,14 @@
-package com.example.biografbackendspring;
+package com.example.biografbackendspring.Theaters;
 
-public class Salon {
+public class Theater {
     private int id;
     private int theaterId;
     private String location;
-    private String theaterSeats; //TA BORT THEATERSEATS
 
-    public Salon(int id, int theaterId, String location, String theaterSeats){
+    public Theater(int id, int theaterId, String location, String theaterSeats){
         this.id = id;
         this.theaterId = theaterId;
         this.location = location;
-        this.theaterSeats = theaterSeats;
 
 
     }
@@ -37,14 +35,6 @@ public class Salon {
         this.location = location;
     }
 
-    public String getTheaterseats() {
-        return theaterSeats;
-    }
-
-    public void setTheaterseats(String theaterseats) {
-
-        this.theaterSeats = theaterseats;
-    }
 
     @Override
     public String toString(){
@@ -52,7 +42,6 @@ public class Salon {
                 "ID" + id +
                 ", TheaterID" + theaterId +
                 ", Location" + location + '\'' +
-                ", TheaterSeats" + theaterSeats + '\'' +
                 '}';
 
     }

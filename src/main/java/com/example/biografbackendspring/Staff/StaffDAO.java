@@ -1,4 +1,5 @@
-import com.example.biografbackendspring.Staff;
+package com.example.biografbackendspring.Staff;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -21,7 +22,7 @@ public class StaffDAO {
         int result = jdbcTemplate.update(query, id, name, phone, userName, passWord, add_staff, delete_staff, role, hours, sell_tickets, tickets_sold, movie_name, dateTime);
 
         if (result > 0) {
-            System.out.println(result + " Salon added to database, good job dumbass");
+            System.out.println(result + " Theater added to database, good job dumbass");
 
         }
 

@@ -1,4 +1,4 @@
-package com.example.biografbackendspring;
+package com.example.biografbackendspring.Movies;
 
 public class Movies {
     private int id;

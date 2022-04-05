@@ -1,4 +1,4 @@
-package com.example.biografbackendspring;
+package com.example.biografbackendspring.Customer;
 
 public class Customer {
     private int id;
