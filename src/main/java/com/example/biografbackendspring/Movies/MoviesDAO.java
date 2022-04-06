@@ -10,11 +10,9 @@ import java.sql.SQLException;
 
 
 @Repository
-
     public class MoviesDAO{
 
         @Autowired
-
         private JdbcTemplate jdbcTemplate;
 
         public void insertMovies(int id, int theaterId, String name, String dateTime) {

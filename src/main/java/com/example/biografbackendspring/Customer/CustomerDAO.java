@@ -9,12 +9,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Repository
-
-
 public class CustomerDAO {
 
-     @Autowired
-
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
      public void insertCustomers(int id, String number, String age, String name, String address){

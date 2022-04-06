@@ -12,24 +12,17 @@ public class Staff {
     private String dateTime;
     private String name;
     private String phone;
-    private String userName;
-    private String passWord;
+    private String username;
+    private String password;
 
 
-    public Staff(int id, String name, String phone, String add_staff, String delete_staff, String role, String hours, String sell_tickets, String tickets_sold, String movie_name, String dateTime, String passWord){
+    public Staff(String name, String phone, String username, String password){
         this.id = id;
         this.name = name;
         this.phone = phone;
-        this.userName = userName;
-        this.passWord = passWord;
-        this.add_staff = add_staff;
-        this.delete_staff = delete_staff;
-        this.role = role;
-        this.hours = hours;
-        this.sell_tickets = sell_tickets;
-        this.tickets_sold = tickets_sold;
-        this.movie_name = movie_name;
-        this.dateTime = dateTime;
+        this.username = username;
+        this.password = password;
+
 
 
     }
@@ -58,20 +51,20 @@ public class Staff {
         this.phone = phone;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getAdd_staff() {return add_staff; }
@@ -113,8 +106,8 @@ public class Staff {
                 "ID=" + id +
                 ", Name='" + name + '\'' +
                 ", Phone='" + phone + '\'' +
-                ", Username='" + userName + '\'' +
-                ", Password='" + passWord + '\'' +
+                ", Username='" + username + '\'' +
+                ", Password='" + password + '\'' +
                 ", Add Staff='" + add_staff + '\'' +
                 ", Delete Staff='" + delete_staff + '\'' +
                 ", Role='" + role + '\'' +

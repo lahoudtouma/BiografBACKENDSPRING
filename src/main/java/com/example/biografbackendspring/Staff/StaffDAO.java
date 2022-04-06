@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,8 +14,22 @@ import java.sql.SQLException;
 public class StaffDAO {
 
     @Autowired
-
     private JdbcTemplate jdbcTemplate;
+
+    public void addStaff(String name, String phone, String username, String password) {
+        String query = "CALL addStaff(?, ?, ?, ?)";
+        int result = jdbcTemplate.update(query, name, phone, username, password);
+
+        if(result>0) {
+            System.out.println(result + "Koden fungerar");
+        }
+        else {
+            System.out.println("Koden fungerar seriöst inte");
+        }
+
+    }
+
+
 
     public void insertStaff(int id, String name, String phone, String userName, String passWord, String add_staff, String delete_staff, String role, String hours, String sell_tickets, String tickets_sold, String movie_name, String dateTime) {
 
@@ -28,7 +44,7 @@ public class StaffDAO {
 
     }
 
-    public Staff getStaffById(int id){
+    /*public Staff getStaffById(int id){
 
         String query = "SELECT * FROM Staff WHERE Staff_id =?";
 
@@ -54,13 +70,7 @@ public class StaffDAO {
         }, id);
 
         return staff;
-
+*/
 
 
     }
-
-
-
-
-
-}
